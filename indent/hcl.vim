@@ -8,11 +8,11 @@ let s:cpo_save = &cpoptions
 set cpoptions&vim
 
 setlocal nolisp
-setlocal autoindent shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+setlocal autoindent shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
 setlocal indentexpr=HclIndent(v:lnum)
 setlocal indentkeys+=<:>,0=},0=)
 let b:undo_indent = 'setlocal lisp< autoindent< shiftwidth< tabstop< softtabstop<'
-  \ . ' expandtab< indentexpr< indentkeys<'
+  \ . ' noexpandtab< indentexpr< indentkeys<'
 
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
